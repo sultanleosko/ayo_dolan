@@ -8,6 +8,7 @@ class Home extends CI_Controller {
 		parent::__construct();
 		$this->load->model('destinasi_model');
 		$this->load->model('paket_model');
+		$this->load->model('kebudayaan_model');
 	}
 
 	public function index()
@@ -15,6 +16,7 @@ class Home extends CI_Controller {
 		$data['six_paket'] = $this->paket_model->get_six_paket();
 		$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();		
 		$data['six_destinasi'] = $this->destinasi_model->get_six_destinasi();
+		$data['two_kebudayaan'] = $this->kebudayaan_model->get_two_kebudayaan();
 		$data['main_view'] = 'home_view';
 		$this->load->view('template_view', $data);
 	}

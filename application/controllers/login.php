@@ -37,7 +37,7 @@ class Login extends CI_Controller {
 					if ($this->user_model->cek_user() == TRUE) {
 						redirect('home');
 					} else {
-						$this->session->set_flashdata('notif_login', '<p class="alert alert-danger">Username atau Password salah!</p>');
+						$this->session->set_flashdata('notif_login', '<p class="alert alert-danger">Akun Anda Belum Terdaftar!</p>');
 						$this->data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();	
 						$this->data['main_view'] = 'register_view';
 						$this->load->view('template_view', $this->data);

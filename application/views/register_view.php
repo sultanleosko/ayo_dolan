@@ -28,6 +28,11 @@
                     <center>
                         <h2 class="text-uppercase">Akun baru</h2>
                         <p class="lead">Belum terdaftar menjadi traveller?</p>
+                        <?php
+                            if(!empty($this->session->flashdata('notif_login'))){
+                                echo $this->session->flashdata('notif_login');
+                            }
+                        ?>
                     </center>
                     
                     <hr>

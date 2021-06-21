@@ -87,6 +87,9 @@
                         <li class="treeview">
                                 <a href="<?php echo base_url(); ?>admin/tabel_user_view"><i class="fa fa-table"></i>Tabel User</a>
                         </li>
+                        <li class="treeview">
+                                <a href="<?php echo base_url(); ?>admin/tabel_kebudayaan_view"><i class="fa fa-table"></i>Tabel Kebudayaan</a>
+                        </li>
                         <li><a href="<?php echo base_url(); ?>home"><i class="fa fa-home"></i> <span>Home</span></a></li>
                     </ul>
                 </section>

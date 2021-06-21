@@ -7,6 +7,11 @@ class Destinasi_model extends CI_Model {
 		return $this->db->insert($table,$data);
 	}
 
+	function update($data, $id_destinasi, $table){
+		$this->db->where('id_destinasi', $id_destinasi);
+		$this->db->update($table, $data);
+	}
+
 	public function get_all_destinasi()
 	{
 		return $this->db->order_by('id_destinasi','DESC')

@@ -56,7 +56,7 @@
                 <div class="navbar navbar-default yamm" role="navigation" id="navbar">
                     <div class="container">
                         <div class="navbar-header">
-                            <a class="navbar-brand home" href="index.html">
+                            <a class="navbar-brand home" href="<?php echo base_url();?>">
                                 <img src="<?php echo base_url();?>assets/img/logo-baru.png" alt="Universal logo" class="hidden-xs hidden-sm">
                                 <img src="<?php echo base_url();?>assets/img/logo-baru.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Ayo Dolan - go to homepage</span>
                             </a>
@@ -100,6 +100,7 @@
                                             echo '<li><a href="'.base_url().'admin">Halaman Admin</a></li>';
                                         } else {
                                             echo '<li><a href="'.base_url().'home/kontak">Kontak</a></li>'; 
+                                            echo '<li><a href="'.base_url().'account/lihat_user_order">Order Saya</a></li>'; 
                                         }
                                     } else {
                                         echo '<li><a href="'.base_url().'home/kontak">Kontak</a></li>';    

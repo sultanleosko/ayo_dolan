@@ -8,6 +8,8 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('user_model');
 		$this->load->model('admin_model');
+		$this->load->model('destinasi_model');
+		$this->load->model('kebudayaan_model');
 	}
 
 	public function index()
@@ -91,6 +93,64 @@ class Admin extends CI_Controller {
 		}
 	}
 
+	public function update_destinasi_view($id_destinasi) 
+	{
+		if ($this->session->userdata("tipe_user") == '1') {
+			$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
+			$data['form_data'] = $this->destinasi_model->get_destinasi_detail($id_destinasi);
+			$data['admin_view'] = 'admin/update_destinasi';
+			$this->load->view('admin/template_view', $data);
+		} else {
+			redirect('home');
+		}
+	}
+
+	public function tabel_kebudayaan_view() 
+	{
+		if ($this->session->userdata("tipe_user") == '1') {
+			$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
+			$data['tabel_kebudayaan'] = $this->admin_model->get_tabel_kebudayaan();	
+			$data['admin_view'] = 'admin/tabel_kebudayaan';
+			$this->load->view('admin/template_view', $data);
+		} else {
+			redirect('home');
+		}
+	}
+
+	public function tambah_kebudayaan_view() 
+	{
+		if ($this->session->userdata("tipe_user") == '1') {
+			$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
+			$data['admin_view'] = 'admin/tambah_kebudayaan';
+			$this->load->view('admin/template_view', $data);
+		} else {
+			redirect('home');
+		}
+	}
+
+	public function update_kebudayaan_view($id) 
+	{
+		if ($this->session->userdata("tipe_user") == '1') {
+			$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
+			$data['form_data'] = $this->kebudayaan_model->get_kebudayaan_detail($id);
+			$data['admin_view'] = 'admin/update_kebudayaan';
+			$this->load->view('admin/template_view', $data);
+		} else {
+			redirect('home');
+		}
+	}
+
+	public function hapus_kebudayaan($id)
+	{
+		if ($this->session->userdata("tipe_user") == '1') {	
+			$where = array('id' => $id);
+			$this->admin_model->hapus_data($where,'tb_kebudayaan');
+			redirect('admin/tabel_kebudayaan_view');
+		} else {
+			redirect('home');
+		}
+	}
+
 	public function tabel_booking_view() 
 	{
 		if ($this->session->userdata("tipe_user") == '1') {
@@ -159,15 +219,4 @@ class Admin extends CI_Controller {
 			redirect('');
 		}
 	}
-
-	function do_upload(){
-    	$type = explode('.', $_FILES["pic"]["name"]);
-    	$type = $type[count($type)-1];
-    	$url = uniqid(rand()).'.'.$type;
-    	if(in_array($type, array("jpg","jpeg","gif","png","PNG")))
-    		if(is_uploaded_file($_FILES["pic"]["tmp_name"]))
-    			if(move_uploaded_file($_FILES["pic"]["tmp_name"],"./assets/img/malang/".$url))
-    				return $url;
-    	return "";
-    }
 }

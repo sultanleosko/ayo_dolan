@@ -168,6 +168,40 @@
                 <div class="see-more">
                     <a href="<?php echo base_url(); ?>destinasi/semua_destinasi" class="btn btn-template-main">Lihat Semua Destinasi</a>
                 </div>
+
+                <hr>
+
+                <div class="heading text-center">
+                    <h3>Kebudayaan</h3>
+                </div>
+
+                <div class="row portfolio no-space">
+                    <?php
+                        foreach ($two_kebudayaan as $twoKeb) {
+                            echo '
+                                <div class="col-md-4">
+                                    <div class="box-image">
+                                        <div class="image">
+                                            <img src="'.base_url().'/assets/img/'.$twoKeb->thumbnail.'" alt="" class="img-responsive">
+                                        </div>
+                                        <div class="bg"></div>
+                                        <div class="name">
+                                            <h3><a href="#">'.$twoKeb->name.'</a></h3> 
+                                        </div>
+                                        <div class="text">
+                                            <p class="buttons">
+                                                <a href="kebudayaan/lihat/'.$twoKeb->id.'" class="btn btn-template-transparent-primary">Lihat</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ';
+                        }        
+                    ?>
+                </div>
+                <div class="see-more">
+                    <a href="<?php echo base_url(); ?>kebudayaan/semua_kebudayaan" class="btn btn-template-main">Lihat Semua Kebudayaan</a>
+                </div>
             </div>
         </div>
     </div>

@@ -44,6 +44,7 @@
                         <p class="text-center">
                             <?php
                                 if($this->session->userdata('login') == TRUE) {
+                                    if($this->session->userdata('tipe_user') != '1')
                                     echo '
                                         <a href="'.base_url().'booking/jumlah_tiket/'.$paket_detail->id_paket.'" class="btn btn-template-main"><i class="fa fa-ticket"></i> Pesan Sekarang</a>
                                     ';
