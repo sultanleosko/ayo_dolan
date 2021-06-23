@@ -111,7 +111,7 @@ class User_model extends CI_Model {
 
 	public function myorder()
 	{
-		return $this->db->select('tb_booking.id_booking, tb_booking.status_booking, tb_paket.nama_paket, tb_booking.total_booking, tb_booking.tanggal_booking, tb_booking.id_paket')
+		return $this->db->select('tb_booking.id_booking, tb_booking.status_booking, tb_paket.nama_paket, tb_booking.total_booking, tb_booking.tanggal_booking, tb_booking.id_paket, tb_booking.bukti_transfer')
 		->join('tb_paket','tb_paket.id_paket = tb_booking.id_paket')
 		->join('tb_user','tb_user.username = tb_booking.username')
 		->where('tb_user.username', $this->session->userdata('username'))

@@ -10,6 +10,7 @@ class Account extends CI_Controller {
 		$this->load->model('user_model');
 		$this->load->model('paket_model');
 		$this->load->model('destinasi_model');
+		$this->load->model('booking_model');
 	}
 
 	public function index() 
@@ -118,5 +119,28 @@ class Account extends CI_Controller {
 			$this->load->view('template_view', $data);
 		}
 	}
+
+	public function update_pembayaran($id_booking)
+	{
+		$foto = $this->do_upload();
+		$data = array(
+			'bukti_transfer' => $foto,
+		);
+		$this->booking_model->update_pembayaran($data, $id_booking, 'tb_booking');
+		redirect('account/lihat_user_order/');
+	}
+
+	public function do_upload()
+	{
+
+    	$type = explode('.', $_FILES["pic"]["name"]);
+    	$type = $type[count($type)-1];
+    	$url = uniqid(rand()).'.'.$type;
+    	if(in_array($type, array("jpg","jpeg","gif","png","PNG")))
+    		if(is_uploaded_file($_FILES["pic"]["tmp_name"]))
+    			if(move_uploaded_file($_FILES["pic"]["tmp_name"],"./assets/img/malang/".$url))
+    				return "malang/".$url;
+    	return "";
+    }
 }
 ?>

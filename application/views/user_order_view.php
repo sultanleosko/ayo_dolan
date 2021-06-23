@@ -29,6 +29,7 @@
                                     <th>Kode Booking</th>
                                     <th>Tanggal</th>
                                     <th>Total</th>
+                                    <th>Bukti Transfer</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -41,12 +42,40 @@
                             <tr>
                                 <td>'.$o->id_booking.'</td>
                                 <td>'.date('d F Y',strtotime($o->tanggal_booking)).'</td>
-                                <td>Rp. '.$o->total_booking.'</td>';
+                                <td>Rp. '.$o->total_booking.'</td>
+                                <td>'
+                                ?>
+                                <?php
+                                    if($o->bukti_transfer != null)
+                                        echo '<p><a href="'.base_url().'/assets/img/'.$o->bukti_transfer.'">Lihat</a></p>';
+                                ?>
+                                <?php
+
+                                if ($o->status_booking == "book") 
+                                echo '
+                                <form action="'.base_url().'account/update_pembayaran/'.$o->id_booking.'" method="post" accept-charset="utf-8" id="bukti_tf_form_'.$o->id_booking.'"  enctype="multipart/form-data">
+                                    <input id="bukti_tf_img_'.$o->id_booking.'" type="file" name="pic" accept="image/*">
+                                </form>
+                                <script>
+                                    document.getElementById("bukti_tf_img_'.$o->id_booking.'").onchange = () => {
+                                        document.getElementById("bukti_tf_form_'.$o->id_booking.'").submit();
+                                    };
+                                </script>
+                                </td>';
 
                                 if ($o->status_booking == "book") {
                                     echo '<td><span class="label label-info">'.$o->status_booking.'</span></td>
                                     <td>
-                                        <a href="'.base_url().'account/edit_booking/'.$o->id_booking.'/'.$o->id_paket.'" class="btn btn-info btn-sm">Confirm</a>
+                                        <a href="'.base_url().'account/edit_booking/'.$o->id_booking.'/'.$o->id_paket.'" class="btn btn-info btn-sm"
+                                        ';
+                                        ?>
+                                        <?php 
+                                            if($o->bukti_transfer == null)
+                                                echo 'disabled';
+                                        ?>
+                                        <?php
+                                        echo '
+                                        >Confirm</a>
                                         <a href="'.base_url().'account/hapus_booking/'.$o->id_booking.'/'.$o->id_paket.'" class="btn btn-danger btn-sm">Hapus</a>
                                     </td>';
                                 } else  {

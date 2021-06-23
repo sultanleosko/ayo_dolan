@@ -92,6 +92,11 @@ class Booking_model extends CI_Model {
 
 	}
 
+	public function update_pembayaran($data, $id, $table){
+		$this->db->where('id_booking', $id);
+		$this->db->update($table, $data);
+	}
+
 	
 	public function get_booking_detail($id_booking)
 	{
