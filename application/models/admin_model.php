@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin_model extends CI_Model {
 	public $db_table = 'tb_destinasi';	
 	public $db_table2 = 'tb_booking';	
-	public $db_table3 = 'tb_user';	
+	public $db_table3 = 'tb_user';
+	public $db_kebudayaan = 'tb_kebudayaan';
 
 	public function add_kota()
 	{
@@ -48,6 +49,13 @@ class Admin_model extends CI_Model {
 	{
 		return $this->db->order_by('id_destinasi', 'ASC')
 						->get($this->db_table)
+						->result();
+	}
+
+	public function get_tabel_kebudayaan() 
+	{
+		return $this->db->order_by('id', 'ASC')
+						->get($this->db_kebudayaan)
 						->result();
 	}
 

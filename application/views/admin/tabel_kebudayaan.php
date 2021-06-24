@@ -1,10 +1,10 @@
 <div class="content-wrapper">
     <section class="content-header">
-        <h1>Tabel Destinasi</h1>
+        <h1>Tabel Kebudayaan</h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="#">Tabel</a></li>
-            <li class="active">Tabel Destinasi</li>
+            <li class="active">Tabel Kebudayaan</li>
         </ol>
     </section>
 
@@ -39,7 +39,7 @@
                     <div class="box-header">
                         <h3 class="box-title"></h3>
                         <div class="box-tools">
-                            <a href="<?php echo base_url(); ?>admin/tambah_destinasi_view" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
+                            <a href="<?php echo base_url(); ?>admin/tambah_kebudayaan_view" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
                         </div>
                     </div>
 
@@ -47,23 +47,21 @@
                         <table class="table table-hover">
                             <tr>
                                 <th style="width: 10px">ID</th>
-                                <th style="width: 225px">Nama Destinasi</th>
-                                <th style="width: 400px">Intro Destinasi</th>
-                                <th style="width: 250px">Gambar Destinasi</th>
+                                <th style="width: 225px">Nama Kebudayaan</th>
+                                <th style="width: 400px">Deskripsi</th>
                                 <th style="width: 85px">Aksi</th>
                             </tr>
 
                             <?php 
-                                foreach ($tabel_destinasi as $td) {
+                                foreach ($tabel_kebudayaan as $td) {
                                     echo '
                                         <tr>
-                                            <td>'.$td->id_destinasi.'</td>
-                                            <td>'.$td->nama_destinasi.'</td>
-                                            <td>'.$td->intro_destinasi.'</td>
-                                            <td>'.$td->gambar_destinasi.'</td>
+                                            <td>'.$td->id.'</td>
+                                            <td>'.$td->name.'</td>
+                                            <td>'.$td->description.'</td>
                                             <td>
-                                                <a href="'.base_url().'admin/update_destinasi_view/'.$td->id_destinasi.'" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i> </a>
-                                                <a href="'.base_url().'admin/hapus_destinasi/'.$td->id_destinasi.'" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> </a>
+                                                <a href="'.base_url().'admin/update_kebudayaan_view/'.$td->id.'" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i> </a>
+                                                <a href="'.base_url().'admin/hapus_kebudayaan/'.$td->id.'" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> </a>
                                             </td>
                                         </tr>
                                     ';

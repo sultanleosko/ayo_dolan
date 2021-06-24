@@ -10,22 +10,23 @@ class Account extends CI_Controller {
 		$this->load->model('user_model');
 		$this->load->model('paket_model');
 		$this->load->model('destinasi_model');
+		$this->load->model('booking_model');
 	}
 
 	public function index() 
 	{
-		$this->data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();	
-		$this->data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
-		$this->data['main_view'] = 'user_account_view';
-		$this->load->view('template_view', $this->data);
+		$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();	
+		$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
+		$data['main_view'] = 'user_account_view';
+		$this->load->view('template_view', $data);
 	}
 
 	public function lihat_user_order()
 	{
-		$this->data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();
-		$this->data['order'] = $this->user_model->myorder();	
-		$this->data['main_view'] = 'user_order_view';
-		$this->load->view('template_view', $this->data);
+		$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();
+		$data['order'] = $this->user_model->myorder();	
+		$data['main_view'] = 'user_order_view';
+		$this->load->view('template_view', $data);
 	}
 
 	public function update_password()
@@ -37,16 +38,16 @@ class Account extends CI_Controller {
 			if ($this->form_validation->run() == TRUE) {
 				$this->user_model->ganti_password();
 				$this->session->set_flashdata('notif_pass', '<p class="alert alert-success"><strong>Ganti password sukses.</strong></p>');
-				$this->data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();	
-				$this->data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
-				$this->data['main_view'] = 'user_account_view';
-				$this->load->view('template_view', $this->data);
+				$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();	
+				$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
+				$data['main_view'] = 'user_account_view';
+				$this->load->view('template_view', $data);
 			} else {
 				$this->session->set_flashdata('notif_pass', '<div class="alert alert-danger">'.validation_errors().'</div>');
-				$this->data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
-				$this->data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();
-				$this->data['main_view'] = 'user_account_view';
-				$this->load->view('template_view', $this->data);
+				$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
+				$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();
+				$data['main_view'] = 'user_account_view';
+				$this->load->view('template_view', $data);
 			}
 		} else {
 			redirect('login');
@@ -67,16 +68,16 @@ class Account extends CI_Controller {
 			if ($this->form_validation->run() == TRUE) {
 				$this->user_model->ganti_profil();
 				$this->session->set_flashdata('notif_detail', '<p class="alert alert-success"><strong>Ganti personal detail sukses.</strong></p>');
-				$this->data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
-				$this->data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();	
-				$this->data['main_view'] = 'user_account_view';
-				$this->load->view('template_view', $this->data);
+				$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
+				$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();	
+				$data['main_view'] = 'user_account_view';
+				$this->load->view('template_view', $data);
 			} else {
 				$this->session->set_flashdata('notif_detail', '<div class="alert alert-danger">'.validation_errors().'</div>');
-				$this->data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
-				$this->data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();	
-				$this->data['main_view'] = 'user_account_view';
-				$this->load->view('template_view', $this->data);
+				$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
+				$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();	
+				$data['main_view'] = 'user_account_view';
+				$this->load->view('template_view', $data);
 			}
 		} else {
 			redirect('login');
@@ -118,5 +119,28 @@ class Account extends CI_Controller {
 			$this->load->view('template_view', $data);
 		}
 	}
+
+	public function update_pembayaran($id_booking)
+	{
+		$foto = $this->do_upload();
+		$data = array(
+			'bukti_transfer' => $foto,
+		);
+		$this->booking_model->update_pembayaran($data, $id_booking, 'tb_booking');
+		redirect('account/lihat_user_order/');
+	}
+
+	public function do_upload()
+	{
+
+    	$type = explode('.', $_FILES["pic"]["name"]);
+    	$type = $type[count($type)-1];
+    	$url = uniqid(rand()).'.'.$type;
+    	if(in_array($type, array("jpg","jpeg","gif","png","PNG")))
+    		if(is_uploaded_file($_FILES["pic"]["tmp_name"]))
+    			if(move_uploaded_file($_FILES["pic"]["tmp_name"],"./assets/img/malang/".$url))
+    				return "malang/".$url;
+    	return "";
+    }
 }
 ?>

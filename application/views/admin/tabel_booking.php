@@ -28,6 +28,7 @@
                                 <th>Status Booking</th>
                                 <th>Total Booking</th>
                                 <th>Tanggal Booking</th>
+                                <th>Bukti Transfer</th>
                                 <th style="width: 125px">Aksi</th>
                             </tr>
 
@@ -41,6 +42,14 @@
                                             <td>'.$tb->total_booking.'</td>
                                             <td>'.$tb->tanggal_booking.'</td>  
                                             ';
+                                            ?>
+                                            <?php
+                                                if($tb->bukti_transfer != null)
+                                                    echo '<td><p><a href="'.base_url().'/assets/img/'.$tb->bukti_transfer.'">Lihat</a></p></td>';
+                                                else
+                                                    echo '<td>Belum ada bukti transfer</td>'
+                                            ?>
+                                            <?php
                                             if ($tb->status_booking == "pending") {
                                                 echo '<td>
                                                             <a href="'.base_url().'admin/hapus_booking/'.$tb->id_booking.'" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> </a>
