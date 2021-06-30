@@ -73,13 +73,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+// $db['default'] = array(
+// 	'dsn'	=> '',
+// 	'hostname' => 'localhost',
+// 	'username' => 'id17160173_root',
+// 	'password' => 'x|N#sH{}C)ZL8uRj',
+// 	'database' => 'id17160173_dbtimortravell',
+// 	'dbdriver' => 'mysqli',
+// 	'dbprefix' => '',
+// 	'pconnect' => FALSE,
+// 	'db_debug' => (ENVIRONMENT !== 'production'),
+// 	'cache_on' => FALSE,
+// 	'cachedir' => '',
+// 	'char_set' => 'utf8',
+// 	'dbcollat' => 'utf8_general_ci',
+// 	'swap_pre' => '',
+// 	'encrypt' => FALSE,
+// 	'compress' => FALSE,
+// 	'stricton' => FALSE,
+// 	'failover' => array(),
+// 	'save_queries' => TRUE
+// );
+
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'id17160173_root',
-	'password' => 'x|N#sH{}C)ZL8uRj',
-	'database' => 'id17160173_dbtimortravell',
-	'dbdriver' => 'mysqli',
+	'hostname' => 'ec2-54-243-92-68.compute-1.amazonaws.com',
+	'username' => 'afjvawvrvhhyyi',
+	'password' => '8999a563fc4d52c9b4c77d578d9aab89b3645ddc752763407bce8d5d7dd59e4b',
+	'database' => 'd8c2sqe05fu67',
+	'dbdriver' => '',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
@@ -94,3 +116,5 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+postgres://afjvawvrvhhyyi:8999a563fc4d52c9b4c77d578d9aab89b3645ddc752763407bce8d5d7dd59e4b@ec2-54-243-92-68.compute-1.amazonaws.com:5432/d8c2sqe05fu67
