@@ -96,12 +96,12 @@ $query_builder = TRUE;
 // );
 
 $db['default'] = array(
-	'dsn'	=> '',
+	'dsn'	=> 'postgres://afjvawvrvhhyyi:8999a563fc4d52c9b4c77d578d9aab89b3645ddc752763407bce8d5d7dd59e4b@ec2-54-243-92-68.compute-1.amazonaws.com:5432/d8c2sqe05fu67',
 	'hostname' => 'ec2-54-243-92-68.compute-1.amazonaws.com',
 	'username' => 'afjvawvrvhhyyi',
 	'password' => '8999a563fc4d52c9b4c77d578d9aab89b3645ddc752763407bce8d5d7dd59e4b',
 	'database' => 'd8c2sqe05fu67',
-	'dbdriver' => '',
+	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
@@ -115,6 +115,6 @@ $db['default'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
-);
+);// 
 
-postgres://afjvawvrvhhyyi:8999a563fc4d52c9b4c77d578d9aab89b3645ddc752763407bce8d5d7dd59e4b@ec2-54-243-92-68.compute-1.amazonaws.com:5432/d8c2sqe05fu67
+// postgres://afjvawvrvhhyyi:8999a563fc4d52c9b4c77d578d9aab89b3645ddc752763407bce8d5d7dd59e4b@ec2-54-243-92-68.compute-1.amazonaws.com:5432/d8c2sqe05fu67
