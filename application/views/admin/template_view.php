@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Admin Ayo Dolan</title>
+    <title>Admin Timor Travell</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -45,8 +45,8 @@
     <div class="wrapper">
         <header class="main-header">
             <a href="<?php echo base_url(); ?>home" class="logo">
-                <span class="logo-mini"><img src="<?php echo base_url();?>assets/img/logo-baru_putih_kecil.png" alt="Universal logo" class="hidden-xs hidden-sm"></span>
-                <span class="logo-lg"><img src="<?php echo base_url();?>assets/img/logo-baru_putih.png" alt="Universal logo" class="hidden-xs hidden-sm"></span>
+                <span class="logo-mini"><img src="<?php echo base_url();?>assets/img/logosatu.png" alt="Universal logo" class="hidden-xs hidden-sm"></span>
+                <span class="logo-lg"><img src="<?php echo base_url();?>assets/img/logotiga.png" alt="Universal logo" class="hidden-xs hidden-sm"></span>
             </a>
             <nav class="navbar navbar-static-top">
                 <div class="navbar-custom-menu">

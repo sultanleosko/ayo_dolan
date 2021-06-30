@@ -15,9 +15,9 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title"></h3>
-                        <div class="box-tools">
+                       <!-- <div class="box-tools">
                             <a href="<?php echo base_url(); ?>admin/tambah_booking_view" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
-                        </div>
+                        </div>-->
                     </div>
 
                     <div class="box-body table-responsive no-padding">

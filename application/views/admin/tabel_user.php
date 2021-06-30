@@ -15,9 +15,9 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title"></h3>
-                        <div class="box-tools">
+                       <!--<div class="box-tools">
                             <a href="<?php echo base_url(); ?>admin/tambah_user_view" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-plus"></i> Tambah Data</a>
-                        </div>
+                        </div>-->
                     </div>
 
                     <div class="box-body table-responsive no-padding">
@@ -41,7 +41,7 @@
                                             <td>'.$tu->username.'</td>
                                             <td>'.$tu->alamat.'</td>
                                             <td>
-                                                <a href="" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i> </a>
+                                                
                                                 <a href="'.base_url().'admin/hapus_user/'.$tu->id_user.'" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> </a>
                                             </td>
                                         </tr>
