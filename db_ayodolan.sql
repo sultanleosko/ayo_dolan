@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2021 at 03:12 AM
+-- Generation Time: Jun 30, 2021 at 07:44 AM
 -- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,21 +43,18 @@ CREATE TABLE `tb_booking` (
 --
 
 INSERT INTO `tb_booking` (`id_booking`, `username`, `status_booking`, `total_booking`, `tanggal_booking`, `id_paket`, `kuantitas`, `bukti_transfer`) VALUES
-(30, 'salma', 'sukses', 200000, '2017-04-30', 3, 2, ''),
-(33, 'salma', 'sukses', 200000, '2017-04-09', 2, 2, ''),
-(34, 'salma', 'pending', 300000, '2017-04-30', 3, 3, ''),
-(35, 'salma', 'pending', 200000, '2017-04-30', 3, 2, ''),
-(36, 'salma', 'pending', 200000, '2017-04-30', 3, 2, ''),
-(37, 'salma', 'book', 200000, '2017-04-30', 3, 2, ''),
-(38, 'salma', 'book', 400000, '2017-04-13', 3, 4, ''),
-(39, 'salma', 'book', 400000, '2017-04-13', 3, 4, ''),
-(40, 'salma', 'book', 400000, '2017-04-13', 3, 4, ''),
-(41, 'salma', 'book', 200000, '2017-04-30', 3, 2, ''),
-(42, 'salma', 'pending', 200000, '2017-04-30', 3, 2, ''),
-(43, 'sultanleosko', 'book', 200000, '2021-06-22', 3, 2, ''),
-(44, 'user', 'sukses', 100000, '2021-06-22', 2, 1, ''),
-(45, 'user', 'pending', 200000, '2021-06-24', 3, 2, 'malang/134792681060d309883ae05.png'),
-(46, 'user', 'pending', 200000, '2021-06-24', 2, 2, 'malang/152678434360d30e00755a3.png');
+(47, 'jeni', 'sukses', 400000, '2021-06-26', 2, 4, 'malang/134079969460d5a6a3d6f6f.png'),
+(48, 'jeni', 'sukses', 200000, '2021-06-30', 2, 2, 'malang/1946115960d6d96b0ee14.jpg'),
+(50, 'jeni', 'sukses', 100000, '2021-06-30', 2, 1, ''),
+(51, 'jeni', 'sukses', 200000, '2021-06-24', 1, 1, ''),
+(52, 'jeni', 'sukses', 100000, '2021-06-30', 3, 1, ''),
+(53, 'jeni', 'sukses', 100000, '2021-06-16', 2, 1, ''),
+(54, 'jeni', 'sukses', 100000, '2021-06-22', 2, 1, 'malang/87825800960d81848513fa.jpg'),
+(55, 'jeni', 'sukses', 100000, '2021-07-02', 2, 1, 'malang/1876270060d8191680f29.png'),
+(56, 'jeni', 'pending', 10000, '2021-07-23', 2, 1, 'malang/207802139560da63197f0eb.png'),
+(58, 'jeni', 'pending', 10000, '2021-06-25', 3, 1, 'malang/53858900760dad60845ee7.png'),
+(59, 'jeni', 'book', 10000, '2021-06-25', 3, 1, ''),
+(60, 'jeni', 'book', 10000, '2021-06-10', 3, 1, '');
 
 -- --------------------------------------------------------
 
@@ -78,13 +75,12 @@ CREATE TABLE `tb_destinasi` (
 --
 
 INSERT INTO `tb_destinasi` (`id_destinasi`, `nama_destinasi`, `lokasi`, `intro_destinasi`, `gambar_destinasi`) VALUES
-(2, 'Gunung Bromo', '', 'Perjalanan melalui pintu barat dari arah pasuruan yaitu masuk dari desa Tosari untuk menuju ke pusat objek wisata (lautan pasir ) terbilang berat karena medan yang harus ditempuh tak bisa dilalui oleh kendaraan roda 4 biasa ini dikarenakan jalan turunan dari penanjakan kearah lautan pasir sangatlah curam, kecuali kita menyewa jip yang disediakan oleh pengelola wisata, jadi wisatawan banyak yang berjalan kaki untuk menuju ke pusat lokasi.', 'malang/gunung_bromo_1000_750.jpg'),
-(3, 'Pantai Balekambang', 'Dusun Sumber Jambe, Desa Srigonco, Kecamatan Bantur, Kabupaten Malang', 'Pantai Balekambang terus berbenah, sejumlah fasilitas tambahan disediakan pengelola, salah satunya flying fox. Permainan ini dilaunching sejak Agustus 2012, namun flying fox ini hanya buka setiap Sabtu-Minggu. Selain flying fox, permainan untuk anak-anak juga menjadi daya tarik. Beragam varian mainan seperti ayunan, patung hewan lengkap tersedia. Bahkan tak lama lagi akan disediakan persewaan ATV.', 'malang/pantai_balekambang_1000_750.jpg'),
-(4, 'Coban Sewu', '', '', 'malang/coban_sewu_1000_750.jpg'),
-(6, 'Pantai Sendiki', 'Desa Tambakrejo, Kecamatan Sumbermanjing Wetan, Kabupaten Malang', 'Pantai yang mempunyai pasir yang putih dan memiliki panorama yang sangat indah membuat parawisatawan senang dan betah. Meski belum sepopuler pantai-pantai yang lain pantai Sendiki mampu membuat pengunjung tertarik untuk menyakisikan keindahan pantai Sendiki, pasir yang bersih membuat wisatawan betah dan senang mengunjungi pantai Sendiki, berbagai aktifitas bisa anda lakukan di pantai Sendiki seperti bermain voly pantai, berenang, atau duduk saja dengan melepas lelah anda.', 'malang/pantai_sendiki_1000_750.jpg'),
-(7, 'Sumber Jenon', 'Desa Gunung Ronggo, Kecamatan Tajinan, Kabupaten Malang', 'Sumber Jenon Malang juga menjadi destinasi yang patut untuk dicoba terutama untuk mereka yang suka hunting foto maupun berlibur dengan sensasi yang berbeda jauh dari perkotaan. Sumber Jenon memiliki air berwarna biru muda yang tertampung pada kolam berbentuk bulat dengan kedalaman sekitar 5 meter. Adapun batang pohon jenu di dalam kolam yang posisinya membujur dari posisi barat ke arah timur yang membuatnya terlihat alami untuk diabadikan.', 'malang/sumber_jenon_1000_750.jpg'),
-(8, 'Kasembon Rafting', 'Jalan Bunga Kumis Kucing No. 46, Jatimulyo, Kota Malang', '', 'malang/kasembon_rafting_1000_750.jpg'),
-(9, 'Jawa Timur Park 1', 'Jalan Kartika No. 2, Kota Batu', 'Sejarah berdirinya Jatim Park 1 bertujuan untuk wahana edukasi, khususnya memberikan pembelajaran kepada anak-anak kecil. Di Jatim Park 1 memiliki miniatur candi, tanaman agro, volcano dan galeri nusantara serta diorama hewan langka.', 'malang/jawa_timur_park_1000_750.jpg');
+(5, 'Fatumnasi', 'Di Kecamatan fatumnasi, Kabupaten Timor Tengah Selatan, Provinsi Nusa Tenggara Timur', 'Fatumnasi adalah sebuah kecamatan yang ada di Kabupaten Timor Tengah Selatan. Fatumnasi menjadi sangat terkenal dikarenakan terdapat view alam yang indah, hewan ternak yang banyak, serta hamparan rumput hijau yang sangat luas. Kelestarian alam tersebut dikarenakan nilai luhur yang dijunjung tinggi oleh oleh Suku Dawan. Dan bukan hanya itu saja, Suku Dawan terkenal sebagai penjaga alam Gunung Mutis.\r\nPengunjung yang datang ke Fatumnasi, dari pertamakali memasuki kawasan tersebut akan disajikan dengan pepohonan yang tumbuh dengan baik, dan hewan ternak yang banyak, seperti kuda, dan sapi.\r\nSuku Dawan menggembala hewan ternak dengan cara sambil meniup seruling. Suara dari seruling tersebut dipercaya dapat menenangkan hewan – hewan, serta para hewan akan merasa disayang oleh sang majikan melalui suara seruling.\r\nFatumnasi adalah sebuah view kesadaran tentang cara berharmoni antara manusia dengan alam sekitar. Suku Dawan menjadi tauladan yang patut ditiru dalam urusan menjaga kelestarian, dan keseimbangan alam.\r\nLokasi Fatumnasi berada Di Kecamatan fatumnasi, Kabupaten Timor Tengah Selatan, Provinsi Nusa Tenggara Timur. Harga tiket masuknya gratis, yang paling penting saat kalian mengunjungi Fatumnasi, hormati adat istiadat, budaya, keyakinan, dari masyarakat setempat.\r\n', 'malang/128132112960d640b2623e4.png'),
+(6, 'Bukit Fatukopa', 'Kecamatan Fatukopa, Kabupaten Timor Tengah Selatan, Provinsi Nusa Tenggara Timur', 'Bukit Fatukopa adalah bukit eksotis yang berbalut dengan nilai budaya, adat – istiadat, serta keyakinan masyarakat setempat. Bahkan Bukit Fatukopa dianggap sebagai bukit yang dikeramatkan. Nama Fatukopa diambil dari bentuk bukit tersebut, karena istilah Fatukopa bermakna Batu Kapal. View terindah adalah saat melihat pesona matahari yang perlahan mulai terbenam.\r\nBukit Fatukopa tidak bisa dijamah oleh pengunjung. Hal tersebut dikarenakan akses jalannya yang sangat sulit, serta berbahaya.Meskipun demikian, keindahan Bukit Fatukopa dapat dinikmati dari spot yang ada di seberang bukit tersebut. Bahkan spot tersebut terkadang dijadikan area camping oleh para pengunjung.\r\nLokasi Bukit Fatukopa terletak di Kecamatan Fatukopa, Kabupaten Timor Tengah Selatan, Provinsi Nusa Tenggara Timur, dan tiket masuk menuju kawasan tersebut gratis.\r\n', 'malang/76865084760d640972a605.png'),
+(7, 'Pantai Kolbano', '', 'Pantai Kolbano terletak daratan pulau timor, Provinsi Nusa Tenggara Timur. Pesona keindahan yang tersaji di Pantai Kolbano merupakan pesona keindahan yang sangat langka terjadi di Indonesia, bahkan dunia. \r\n\r\npantai ini memang menyepi di pesisir selatan Pulau Timor yang tak gampang dijangkau. Sekitar 130 km dari Kupang yang ditempuh 3-5 jam perjalan. Namun, perjalanan ke Kolbano tak akan sia-sia. pengungjung akan menjumpai pantai langka nan rupawan yang dihampari oleh batuan kerikil berwarna warni. Ada merah, hijau, kuning, hitam, bahkan batu yang bercorak pun ada. Kerikil ini begitu cantik berharmoni dengan perairan Laut Timor yang gemerlap hijau toska. \r\n\r\nKeistimewaan Pantai Kolbano lainnya adalah pengunjung bisa menikmati sunset dan sunrise dengan panorama memukai yang mengesankan.', 'malang/155922621760d63f8e1a03f.png'),
+(8, 'Gunung Mutis', 'Perbatasan antara kab. Timor Tengah utara dan kab. Timor Tengah selatan, Nusa Tenggara Timur', 'Gunung Mutis merupakan salah-satu gunung tertinggi yang ada di Pulau Timor. Kehadiran Gunung Mutis tidak bisa dilepaskan dengan kehadiran penjaga gunung tersebut, yaitu Suku Dawan.\r\nSebetulnya, Gunung Mutis dengan Fatumnasi adalah paket kunjungan layaknya dua sisi mata uang. Dan kunjungan ke Gunung Mutis, beserta Fatumnasi bisa menjadi wisata edukasi, selain dari wisata alam. Salah-satu yang terkenal dari Gunung Mutis adalah Cagar Alam Gunung Mutis. Selain itu, kawasan Gunung Mutis terkenal juga dengan kekayaan marmernya.\r\nGunung Mutis memiliki tiga puncak, dengan masing-masing puncak memiliki nama tersendiri, serta view yang berbeda, namun sama-sama indah. Jika pengunjung ingin mendaki ke puncak Gunung Mutis, rutenya sama seperti menuju Fatumnasi. Selain itu Gunung Mutis dan Fatumnasi terdapat sebuah kawasan yang sering disebut dengan hutan Bonsai. Sebetulnya pohon tersebut bukanlah pohon bonsai, tetapi memang mirip pohon Bonsai. Masyarakat sekitar menyebut kawasan itu dengan nama Akuna, yang berarti Hutan Tanaman Kerdil.\r\n', 'malang/206681985660d63fe1b3f5e.png'),
+(9, 'Teluk Gurita', 'Desa Dualaus, Kakuluk Mesak, Kabupaten Belu, Nusa Tenggara Timur', 'Teluk Gurita dulunya merupakan sebuah Pelabuhan yang terdapat banyak saudagar Eropa yang medarat di Pelabuhan ini untuk mencari lilin dan cendana. Pelabuhan ini berubah menjadi teluk gurita konon ceritanya dulu terdapat sebua kapal pedagang yang dililit gurita hingga tenggelam,kemudian munculah nama pantai Teluk Gurita. Objek wisata ini juga pernah diberi nama Kuit Namon , yang kemudian di ganti menjadi Teluk Gurita. \r\nPesona teluk yang menawan siap menemanimu mengisi waktu liburan Bersama keluarga. Airnya yang jernih dan tenang menggoda siapa saja untuk bermain air di tempat ini. Selain itu, terdapat sebuah patung Bunda Maria yang berdiri persis di bukit Teluk Gurita yang langsung menghadap pada luasnya lautan. pengunjung juga bisa melakukan ziarah rohani ke Teluk Gurita.  Lokasi Teluk Gurita ini terletak di Desa Dualaus, Kakuluk Mesak, Kabupaten Belu, NTT\r\n', 'malang/54397112760d64017632b7.png'),
+(29, 'Air Terjun Mauhalek', 'a', 'b', 'malang/44012553060daccbbbef46.jpg');
 
 -- --------------------------------------------------------
 
@@ -104,7 +100,12 @@ CREATE TABLE `tb_kebudayaan` (
 --
 
 INSERT INTO `tb_kebudayaan` (`id`, `name`, `thumbnail`, `description`) VALUES
-(1, 'test', 'malang/77670019960d0b804b0e8b.jpg', 'test22');
+(2, 'Suku Atoni (Dawan)', 'malang/196132604960da381b44101.jpg', 'Suku Atoni (juga dikenal sebagai Atoin Meto atau Dawan) adalah suku bangsa yang mendiami pulau Timor, tepatnya di Kabupaten Timor Barat, Indonesia dan enklave Oecussi-Ambeno, Timor Leste. Jumlah Populasi orang Atoni mencacpai 600.000 jiwa. Bahasa yang dipertuturkan ialah Uab Meto.Atoni Meto adalah salah satu suku yang berdiam di wilayah provinsi Nusa Tenggara Timur (NTT). Suku Atoni tersebar hampir di seluruh daratan Pulau Timor yang terletak di bagian selatan provinsi NTT. Atoni Meto terdiri dari dua kata yakni Atoni berarti orang atau manusia, Meto secara harafiah berarti tanah kering. Pada umumnya orang biasa menyebutkan Atoni Pah Meto yang berarti “orang-orang dari tanah kering.\"\r\n\r\nSalah satu nilai fundamental dalam kehidupan Atoni Meto terdapat dalam paham feto-mone. Feto-mone bisa dikatakan sebagai norma atau sikap hidup masyarakat Atoni yang menjadi panduan untuk menjaga dan melestarikan kehidupan masyarakat Atoni. Konsep ini bisa disejajarkan dengan konsep manunggaling kawulo gusti pada masyarakat Jawa atau Yin-Yang pada masyarakat Tionghoa, berikut penjelasan dari kata feto-mone.\r\n\r\nKata \"feto \"berarti perempuan. Dalam hubungan dengan baris keturunan, seorang yang dihitung melalui garis keturunan ibu dikategorikan sebagai feto.\r\n\r\n\"Mone\" berarti laki-laki. Dalam hubungan dengan baris keturunan seseorang yang dihitung melalui garis keturunan ayah dikategorikan sebagai mone. Dalam istilah ini, feto-mone di erjemahkan sebagai feminis-maskulin untuk menjelaskan konsepsi masyarakat Atoni Meto tentang perempuan dan laki-laki. Konsepsi ini dapat dibangingkan dengan konsepsi Yin-yang dalam masyarakat Tionghoa .\r\n\r\nPandangan relasi-relasi komis dan sosial juga ikut diekspresikan dalam nilai ini. Relasi-relasi itu meliputi relasi manusia dengan Tuhan, manusia dengan sesama, dan manusia dengan alam misalnya: Uis Pah-Uis Neno (Allah Bumi-Allah Langit), Ain-Uis Neno-Am-Uis (Allah Ibu-Allah Bapa), Bife-Atoni (perempuan-laki-laki), dan lain sebagainya. \r\n\r\nTerm feto-mone mengindikasikan satu kesatuan yang tidak bisa hadir tanpa yang lain, seperti hidup yang tidak bisa ada tanpa kesatuan antara laki-laki dan perempuan .Dilihat pada penerapannya, konsep feto-mone memiliki dampak kehidupan perempuan dan laki-laki seperti pembagian kerja. Masyarakat Atoni membedakan peranan perempuan dan laki-laki.\r\n\r\nLaki-laki bertugas dalam ranah publik, seperti berperang, membangun hubungan dengan masyarakat luas, dan bekerja di kebun sedangkan perempuan lebih mengurus persoalan privat seperti memasak, mencuci, menjamu tamu dan lain-lain. Alasan perempuan ditempatkan pada ranah privat dikarenakan juga dikarenakan perempuan pada masyarakat Atoni dilihat sebagai “ibu kehidupan”.'),
+(3, 'Suku Tetun', 'malang/8130974760da38781c9da.jpg', 'Suku Belu, atau disebut juga Suku Tetun/Tetum, adalah salah satu penduduk asli Pulau Timor. Suku ini mendiami sebagian besar Kabupaten Belu, dan bahasa mereka disebut dengan Bahasa Tetun.Selain di Timor Barat, suku ini juga terdapat di Timor Leste.\r\n\r\nBerdasarkan cerita adat, Suku Belu dipercayai sebelumnya berasal dari Malaka, kemudian berpindah ke beberapa tempat sebelum akhirnya tiba di Pulau Timor, yaitu di Belu selatan.\r\n\r\nSalah satu tarian tradisional suku Belu adalah Tari Likurai, yang ditarikan oleh kaum wanita untuk menyambut tamu atau pejuang yang kembali dari perang.\r\n\r\nWanita suku Belu yang akan dan telah menikah, dahulu secara tradisional akan memakai tato dengan motif tertentu yang melambangkan status sosial mereka. Para pengantin pria dan wanita Suku Belu juga memiliki pakaian adat yang dilengkapi hiasan kepala, kain, kalung, giwang, serta perhiasan-perhiasan lainnya yang memiliki corak dan makna yang khas.'),
+(4, 'Suku Kemak', 'malang/22046890960da38b57d9ef.jpg', ''),
+(5, 'Suku Bunak (Marae)', 'malang/207067115660da38f400e0f.jpg', 'Suku Bunak (Bunaq, Buna\', Bunake), atau disebut juga suku Marae, adalah suku bangsa yang tinggal di wilayah pegunungan tengah Timor, terpisah oleh perbatasan politik Timor Barat, Indonesia, tepatnya Distrik Lamaknen dan Timor-Leste.\r\n\r\nIstilah Bunak juga merujuk kepada Bahasa Bunak, yaitu salah satu bahasa Timor Leste yang tidak termasuk rumpun bahasa Austronesia, dan diklasifikasikan sebagai sebuah bahasa Trans-Nugini. Suku ini dikelilingi oleh suku-suku yang menggunakan bahasa-bahasa dari rumpun bahasa Melayu-Polinesia, seperti bahasa Atone dan bahasa Tetun.'),
+(6, 'Suku Rote', 'malang/55691154460da3a0c32925.jpg', 'Suku Rote adalah salah satu penduduk asli Pulau Rote, yang sebagian di antaranya ada pula yang menetap di Pulau Timor. Selain itu, Suku Rote juga mendiami pulau-pulau di sekitar Pulau Rote, yaitu Pulau Ndao, Pulau Nuse, Pulau Pamana, Pulau Doo, Pulau Heliana, Pulau Landu, Pulau Manuk, dan pulau-pulau kecil lainnya. Ada ahli yang berpendapat bahwa orang Rote sebelumnya bermigrasi dari Pulau Seram di Maluku.\r\n\r\nBahasa Suku Rote termasuk Rumpun bahasa Austronesia, dari Melayu-Polinesia Barat-Selatan, yang terbagi ke dalam beberapa dialek.\r\n\r\nMata pencaharian orang Rote adalah berladang, beternak, menangkap ikan, menyadap nira, dan kerajinan lontar. Tanah yang memiliki pengairan dibuat menjadi sawah atau sawah tadah hujan. Hasil pertanian utama adalah padi ladang, jagung, dan ubi kayu, sedangkan hewan ternak utama adalah kerbau, sapi, kuda, dan ayam. Wanita Suku Rote mengerjakan kerajinan menenun kain tradisional, anyaman pandan, dll.\r\n\r\nSistim kekerabatan suku ini adalah kekerabatan keluarga inti atau keluarga luas, dan bersifat patrilineal dan menjaga adat pernikahan eksogami klan.Gabungan beberapa keluarga luas membentuk klan kecil (nggi leo), gabungan klan-klan kecil membentuk klan besar (leo). Pemimpin klan dinamakan manek atau mane leo.\r\n\r\nKepercayaan tradisional Suku Rote mengenal sosok Sang Pencipta, yaitu Lamatuan atau Lamatuak. Sosok tersebut dipandang sebagai Pencipta, Pengatur, dan Pemberi Berkah, yang dilambangkan tiang bercabang tiga. Pada masa kini, Suku Rote banyak yang telah menganut agama Kristen Protestan, Kristen Katolik, atau Islam.'),
+(7, 'Suku Helong', 'malang/44442141160da3966dca00.jpg', 'Suku Helong adalah salah satu penduduk asli Pulau Timor.Kebanyakan dari mereka berdiam di Kabupaten Kupang, yaitu di Kupang Barat dan Kupang Tengah,serta selain itu juga di Pulau Flores dan Pulau Semau. Mata pencaharian suku ini terutama adalah berladang, berburu, menangkap ikan, dan membuat kerajinan tradisional.\r\n\r\nBahasa asli suku ini disebut Bahasa Helong, yang memiliki dua dialek, yaitu dialek Helong Semau dan dialek Helong Daratan Timur. Penutur bahasa Helong dapat ditemukan di empat desa di pesisir barat daya wilayah Timor Barat, serta di Pulau Semau di lepas pantai Timor Barat.\r\n\r\nSistem kekerabatan Suku Helong yang terkecil adalah keluarga inti, yang bergabung menjadi keluarga luas terbatas (ngalo).Beberapa ngalo bergabung membentuk klan (ingu) yang dipimpin seorang pemimpin klan (koka ana) seketurunan tersebut.Dalam hal strata sosial, masyarakat Helong zaman dahulu terbagi menjadi tiga lapisan, yaitu bangsawan (usif), orang kebanyakan (tob), dan hamba sahaya (ata).');
 
 -- --------------------------------------------------------
 
@@ -127,9 +128,10 @@ CREATE TABLE `tb_paket` (
 --
 
 INSERT INTO `tb_paket` (`id_paket`, `nama_paket`, `lokasi`, `gambar_paket`, `kuota`, `harga_tiket`, `deskripsi`) VALUES
-(1, 'Bromo Open Trip', 'Penanjakan, Bukit Teletubies, Lautan Pasir, Puncak Bromo', 'malang/paket/paket_1.jpg', 12, 200000, 'Gunung Bromo adalah lokasi terbaik di Indonesia untuk melihat matahari terbit yang sangat indah dan menawan.'),
-(2, 'Pantai Malang 1', 'Pantai Goa Cina, Pantai Bajul Mati', 'malang/paket/paket_2.jpg\r\n', 20, 100000, 'Banyak wisata baru ditemukan di Malang salah satunya adalah pantai, pantai pantai baru yang masih terjaga alami nya'),
-(3, 'Jatim Park 1', 'Jl. Kartika No. 2, Sisir, Batu, Kota Batu, Jawa Timur 65315', 'malang/paket/paket_3.jpg', 20, 100000, 'Banyak wahana yang terkenal di Malang. Salah satunya adalah Jatim Park 1 Malang. Terdapat banyak wahana permainan mulai dari anak-anak hingga remaja. Wahana yang disediakan juga beragam.');
+(1, 'Bukit Tuamese', 'Desa Tuamese, Kecamatan Biboki Anleu, Kabupaten Timor Tengah Utara', 'malang/paket_timor/bukit_tuamese.png', 100, 5000, 'Bukit Tuamese berada di Desa Tuamese, Kecamatan Biboki Anleu, Kabupaten Timor Tengah Utara. Dari atas bukit tuamese pengunjung bisa melihat pemandangan dan lembah yang merupakan bekas tembak garang dapat memanjakan mata pengunjung. \r\nSuasana yang sejuk membuat siapa saja betah berlama-lama di tempat ini. Dari atas bukit tuamese kemu juga bisa melihat pemandangan laut yang menawan dan sangat cocok untuk dijadikan spot foto keren. \r\n'),
+(2, 'Pantai Oetune', 'Desa Tuafanu, Kecamatan Kualin, Kabupaten Timor Tengah Selatan, Provinsi Nusa Tenggara Timur', 'malang/paket_timor/pantai_oetune.png', 100, 10000, 'Pantai oetune merupakan pantai yang memiliki pesona gurun pasir khas timur tengah, yang berpadu dengan keindahan alam pantai. Perpaduan keindahan tersebut bukanlah fatamorgana, hal tersebut merupakan kenyataan yang ada di Kabupaten Timor Tengah Selatan, atau yang biasa disebut dengan Kabupaten TTS. Bahkan beberapa waktu yang lalu, awalnya netizen tidak menyangka bahwa gurun pasir di dekat pantai tersebut berada di Indonesia. Pada akhirnya, keindahan Pantai Oetune mulai ramai dibicarakan. Air pantai, serta gurun pasirnya sangat bersih. Serta di pinggir pantai terdapat pohon Kasuari, serta Pohon Lontar khas Pulau Timor.\r\nLokasi Pantai Oetune terletak di Desa Tuafanu, Kecamatan Kualin, Kabupaten Timor Tengah Selatan, Provinsi Nusa Tenggara Timur. dari kota Kupang rute yang dapat ditempuh berjarak 127 kilometer, dengan total waktu tempuh sekitar 3 jam perjalanan.\r\n'),
+(3, ' Fulan Fehan', 'Desa Dirun,Kecamatan Lamaknen, Kabupaten belu,NTT', 'malang/paket_timor/fulan_fehan.png', 100, 10000, 'Wisata lembah Fulan Fehan merupakan tempat wisata yang berada di kabupaten belu tepatnya di desa Dirun,Kecamatan Lamaknen, Kabupaten belu,NTT. Objek wisata ini berada dikawasan yang menawan dimana kita akan disuguhkan hamparan padang sabana yang begitu luas. Kondisi tanahnya sedikit bergelombang terlihat seperti bukit-bukit kecil yang diselimuti tumbuhan hijau. Sejauh mata memandang pengunjung yang datang akan melihat hamparan padang rumput yang menawan dan terasa sangat sejuk karna berada pada ketingihan. \r\nSuasana semakin menarik dimana terdapat kuda-kuda berkeliaran bebas sambil makan rumput. Satu lagi keunikan lembah fulan fehan yaitu tumbuh kaktus yang cukup banyak membuat suasana berada seperti di padang pasir .melihat seluruh keindahan tempat ini tidak heran jika kawasana ini menjadi salah satu Kawasan popular. \r\n'),
+(4, 'Pantai Tablolong ', 'kupang', 'malang/paket_timor/pantai_tablolong.png', 100, 10000, 'Pantai Tablolong yang berada sekitar 30 km dari pusat kota Kupang. Keistimewaan dari Pantai Tablolong ini ialah keindahan berupa pasir putih yang lembut dengan perairan tenang nan jernih yang bisa pengunjung nikmati sepanjang waktu. \r\nDi pantai ini, pengunjung bisa bermain air sepuasnya, menikmati terumbu karang pesisir atau sekedar mendinginkan badan dengan panorama yang menawan. Panorama di seberang pantai juga elok karena diwarnai oleh Pantai Semau dan Pantai Kambing yang mengisi ruang cakrawala. Sesekali keberadaan nelayan berlalu lalang yang membuat obyek makin sedap untuk difoto\r\n');
 
 -- --------------------------------------------------------
 
@@ -152,10 +154,8 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id_user`, `nama_lengkap`, `email`, `username`, `password`, `alamat`, `tipe_user`) VALUES
-(1, 'Sultan Leosko Akbar Atjil', 'leoskosultan@gmail.com', 'sultanleosko', 'leosko1234', 'Jl. Simpang Sulfat Utara 3 No. 22A', '1'),
-(3, 'Sultan Geraldo Akbar Atjil', 'sultangeraldo@yahoo.com', 'sultangeraldo', 'geraldo1234', 'Jl. Simpang Sulfat Utara 3 No. 22A', '2'),
-(5, 'Salma Ayu', 'salmaayu@gmail.com', 'salma', 'salma', 'Vila Adonia A-8', '2'),
-(6, 'user', 'user@gmail.com', 'user', 'satusatu', '-', '2');
+(1, 'emon mollo', 'edmollo696@gmail.com', 'emon', 'qwerty', 'malang', '1'),
+(7, 'jenifer asten', 'jenifer@gmail.com', 'jeni', 'qwerty', 'atambua', '2');
 
 --
 -- Indexes for dumped tables
@@ -200,31 +200,31 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_booking`
 --
 ALTER TABLE `tb_booking`
-  MODIFY `id_booking` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_booking` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `tb_destinasi`
 --
 ALTER TABLE `tb_destinasi`
-  MODIFY `id_destinasi` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_destinasi` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tb_kebudayaan`
 --
 ALTER TABLE `tb_kebudayaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tb_paket`
 --
 ALTER TABLE `tb_paket`
-  MODIFY `id_paket` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_paket` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

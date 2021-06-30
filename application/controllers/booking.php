@@ -8,7 +8,6 @@ class Booking extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('booking_model');
-		$this->load->model('destinasi_model');
 		$this->load->model('paket_model');
 		$this->load->model('blog_model');
 		$this->load->model('user_model');
@@ -30,8 +29,7 @@ class Booking extends CI_Controller {
 
 				if ($this->form_validation->run() == TRUE) {
 					$data['paket_detail'] = $this->paket_model->get_paket_detail($id_paket);
-					$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
-					$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();	
+					$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));	
 					$data['jml'] = $kuantitas;
 					$data['tgl'] = $tanggal;
 					$data['main_view'] = 'konfirmasi_data_view';
@@ -53,7 +51,7 @@ class Booking extends CI_Controller {
 	{
 		$data['paket_detail'] = $this->paket_model->get_paket_detail($id_paket);
 		$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
-		$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();
+
 		$data['main_view'] = 'jumlah_tiket_view';
 		$this->load->view('template_view', $data);
 	}
@@ -67,7 +65,6 @@ class Booking extends CI_Controller {
 			if($this->input->post('submit_konvermasi')) {
 				$data['paket_detail'] = $this->paket_model->get_paket_detail($id_paket);
 				$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
-				$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();
 				$data['paket_order'] = $this->user_model->order_paket();
 				$data['jml'] = $kuantitas;
 				$data['tgl'] = $tanggal;
@@ -93,7 +90,6 @@ class Booking extends CI_Controller {
 					$data['paket_detail'] = $this->paket_model->get_paket_detail($id_paket);
 					$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
 					$data['paket_order'] = $this->user_model->order_paket();
-					$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();
 					$data['ttl'] = $total_booking;
 					$data['main_view'] = 'pembayaran_view';
 					$this->load->view('template_view', $data);
@@ -122,7 +118,6 @@ class Booking extends CI_Controller {
 					if ($this->booking_model->booking_data($id_paket,$total_booking) == TRUE) {
 						$data['paket_detail'] = $this->paket_model->get_paket_detail($id_paket);
 						$data['profil_user'] = $this->user_model->get_detail_profile($this->session->userdata('username'));
-						$data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();	
 						$data['main_view'] = 'konfirmasi_data_view';
 						$this->load->view('template_view', $data);
 					} else {
