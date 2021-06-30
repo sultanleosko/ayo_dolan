@@ -7,7 +7,7 @@
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ayo Dolan</title>
+    <title>Timor Travell</title>
 
     <meta name="keywords" content="">
 
@@ -57,8 +57,8 @@
                     <div class="container">
                         <div class="navbar-header">
                             <a class="navbar-brand home" href="<?php echo base_url();?>">
-                                <img src="<?php echo base_url();?>assets/img/logo-baru.png" alt="Universal logo" class="hidden-xs hidden-sm">
-                                <img src="<?php echo base_url();?>assets/img/logo-baru.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Ayo Dolan - go to homepage</span>
+                                <img src="<?php echo base_url();?>assets/img/logosatu.png" alt="Universal logo" class="hidden-xs hidden-sm">
+                                <img src="<?php echo base_url();?>assets/img/logotiga.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Timor Travell - go to homepage</span>
                             </a>
                             <div class="navbar-buttons">
                                 <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -165,15 +165,15 @@
             <div class="container">
                 <div class="col-md-3 col-sm-6">
                     <h4>Tentang Kami</h4>
-                    <p>Kami adalah penyedia layanan pemesanan paket wisata di Kawasan Malang untuk tour satu hari.</p>
+                    <p>Kami adalah penyedia layanan informasi dan paket wisata di Pulau Timor.</p>
                     <hr class="hidden-md hidden-lg hidden-sm">
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <h4>Kontak</h4>
-                    <p><strong>Ayo Dolan</strong>
-                        <br>Jl. Simpang Sulfat Utara 3 No. 22A
-                        <br>Malang
-                        <br>Jawa Timur
+                    <p><strong>Timor Travell</strong>
+                        <br>KBC Helldope
+                        <br>Atambua
+                        <br>Nusa Tenggara Timur
                     </p>
                 </div>
             </div>
@@ -184,7 +184,7 @@
         <div id="copyright">
             <div class="container">
                 <div class="col-md-12">
-                    <p class="pull-left"><center>&copy;2017. Ayo Dolan.</center></p>
+                    <p class="pull-left"><center>&copy;2021. Timor Travell.</center></p>
                 </div>
             </div>
         </div>

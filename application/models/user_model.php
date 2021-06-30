@@ -40,7 +40,7 @@ class User_model extends CI_Model {
 
 	public function hapus_data($where, $table)
 	{
-		return $this->db->where($where)
+						$this->db->where($where)
 				 		->delete($table);
 	}
 

@@ -24,9 +24,9 @@
                         <h2>Form Kontak</h2>
                         <br><br>
                         <h5><p>
-                            Kantor : Jl. Simpang Sulfat Utara 3 No. 22A, Malang, Jawa Timur<br><br>
-                            Telepon : 081216001700<br><br>
-                            Email : leoskosultan@gmail.com<br>
+                            Kantor : KBC Helldope, Atambuaa, Nusa Tenggara Timur<br><br>
+                            Telepon : 081339069766<br><br>
+                            Email : edmollo696@gmail.com<br>
                         </p></h5>
                     </div>
                 </div>

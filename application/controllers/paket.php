@@ -20,7 +20,7 @@ class Paket extends CI_Controller {
     public function lihat_paket($id_paket)
     {
     	$data['paket_detail'] = $this->paket_model->get_paket_detail($id_paket);
-        $data['two_destinasi'] = $this->destinasi_model->get_two_destinasi();
+        
     	$data['four_paket'] = $this->paket_model->get_four_paket();
     	$data['main_view'] = 'paket_view';
 		$this->load->view('template_view', $data);

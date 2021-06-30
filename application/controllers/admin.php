@@ -29,7 +29,7 @@ class Admin extends CI_Controller {
 	{
 		if ($this->session->userdata("tipe_user") == '1') {	
 			$where = array('id_booking' => $id);
-			$this->admin_model->hapus_data($where,'tb_booking');
+			var_dump($this->admin_model->hapus_data($where,'tb_booking'));
 			redirect('admin/tabel_booking_view');
 		} else {
 			redirect('home');
